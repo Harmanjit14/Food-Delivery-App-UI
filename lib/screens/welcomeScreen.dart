@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_ui/data/data.dart';
+import 'package:food_app_ui/models/order.dart';
+import 'package:food_app_ui/screens/recentOrder.dart';
 
 class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.amber[600],
         title: Text(
           'Zomato',
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(fontSize: 25, color: Colors.black),
         ),
         centerTitle: true,
         actions: <Widget>[
@@ -17,6 +21,7 @@ class Screen1 extends StatelessWidget {
               child: Icon(
                 Icons.shopping_basket,
                 size: 30,
+                color: Colors.black,
               ),
             ),
           ),
@@ -25,7 +30,7 @@ class Screen1 extends StatelessWidget {
             icon: Icon(
               Icons.account_circle,
               size: 30,
-              color: Colors.white,
+              color: Colors.black,
             ),
             onPressed: null),
       ),
@@ -40,34 +45,61 @@ class Body1 extends StatefulWidget {
 }
 
 class _Body1State extends State<Body1> {
-  String search_content;
-  @override
   @override
   Widget build(BuildContext context) {
-    MediaQueryData queryData;
-    queryData = MediaQuery.of(context);
-    return Container(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'SEARCH HERE',
-                  fillColor: Colors.amber,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide(
-                      width: 1,
-                    ),
-                  ),
+    return ListView(
+      children: [
+        Container(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: TextField(
+              decoration: InputDecoration(
+                suffixIcon: Icon(
+                  Icons.search,
+                  size: 25,
+                ),
+                hintText: 'Search for Food or Restaurants',
+                prefixIcon: Icon(
+                  Icons.arrow_right,
+                  size: 30,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide(width: 1, color: Colors.black),
                 ),
               ),
             ),
-          )
-        ],
-      ),
+          ),
+        ),
+        Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                child: Text(
+                  'Recent Orders',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 25,
+                      letterSpacing: 1.2),
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.17,
+                margin: EdgeInsets.fromLTRB(20, 5, 20, 0),
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: currentUser.orders.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      Order order = currentUser.orders[index];
+                      return recentOrder(context, order);
+                    }),
+              ),
+            ],
+          ),
+        )
+      ],
     );
   }
 }

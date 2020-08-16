@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Food App',
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+          primaryColor: Colors.black,
+          scaffoldBackgroundColor: Colors.grey[300]),
       home: Screen1(),
     );
   }
