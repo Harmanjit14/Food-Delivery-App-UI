@@ -8,6 +8,12 @@ class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          color: Colors.amber[600],
+          height: 50,
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.amber[600],
         title: Text(
@@ -49,6 +55,7 @@ class _Body1State extends State<Body1> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       children: [
         Container(
           child: Padding(
