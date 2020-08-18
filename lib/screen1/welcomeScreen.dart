@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/data/data.dart';
 import 'package:food_app_ui/models/order.dart';
-import 'package:food_app_ui/screens/recentOrder.dart';
+import 'package:food_app_ui/screen1/nearbyRes.dart';
+import 'package:food_app_ui/screen1/recentOrder.dart';
 
 class Screen1 extends StatelessWidget {
   @override
@@ -55,8 +56,8 @@ class _Body1State extends State<Body1> {
             child: TextField(
               decoration: InputDecoration(
                 suffixIcon: Icon(
-                  Icons.search,
-                  size: 25,
+                  Icons.arrow_left,
+                  size: 30,
                 ),
                 hintText: 'Search for Food or Restaurants',
                 prefixIcon: Icon(
@@ -98,7 +99,27 @@ class _Body1State extends State<Body1> {
               ),
             ],
           ),
-        )
+        ),
+        Container(
+          margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                child: Text(
+                  'Nearby Restaurants',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 20,
+                      letterSpacing: 1.2),
+                ),
+              ),
+              Container(child: nearbyRes(context)),
+            ],
+          ),
+        ),
       ],
     );
   }

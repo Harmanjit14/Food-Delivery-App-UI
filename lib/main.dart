@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_ui/screens/welcomeScreen.dart';
+import 'package:food_app_ui/screen1/welcomeScreen.dart';
 
 void main() {
   runApp(MyApp());
