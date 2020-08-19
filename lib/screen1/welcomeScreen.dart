@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_ui/bottomNavbar.dart';
 import 'package:food_app_ui/data/data.dart';
 import 'package:food_app_ui/models/order.dart';
 import 'package:food_app_ui/screen1/nearbyRes.dart';
@@ -12,6 +13,7 @@ class Screen1 extends StatelessWidget {
         child: Container(
           color: Colors.amber[600],
           height: 50,
+          child: Navbar(),
         ),
       ),
       appBar: AppBar(
