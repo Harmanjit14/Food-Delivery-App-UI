@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/bottomNavbar.dart';
+import 'package:food_app_ui/cart.dart';
 import 'package:food_app_ui/data/data.dart';
 import 'package:food_app_ui/models/order.dart';
 import 'package:food_app_ui/screen1/nearbyRes.dart';
@@ -24,16 +25,7 @@ class Screen1 extends StatelessWidget {
         ),
         centerTitle: true,
         actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(
-              child: Icon(
-                Icons.shopping_basket,
-                size: 30,
-                color: Colors.black,
-              ),
-            ),
-          ),
+         CartView()
         ],
         leading: IconButton(
             icon: Icon(
