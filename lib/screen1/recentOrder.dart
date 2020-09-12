@@ -45,7 +45,7 @@ Widget recentOrder(BuildContext context, Order order) {
         FloatingActionButton(
           backgroundColor: Colors.black,
           onPressed: () {
-            
+            CartView.add();
           },
           elevation: 0,
           child: Icon(

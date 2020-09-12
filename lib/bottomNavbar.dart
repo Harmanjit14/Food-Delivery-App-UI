@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_ui/screen2/allrest.dart';
 
 class Navbar extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class _NavbarState extends State<Navbar> {
   Color disabCol = Colors.amber[600];
   Color enabCol = Colors.black;
   Color useCol = Colors.amber[600];
-  double useSize0 = 25;
+  double useSize0 = 35;
   double useSize1 = 25;
   double useSize2 = 25;
   double useSize3 = 25;
@@ -32,6 +33,12 @@ class _NavbarState extends State<Navbar> {
           useSize0 = diabSize;
           useSize2 = diabSize;
           useSize3 = diabSize;
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => AllRestaurants(),
+              ),
+            );
         }
         break;
       case 2:

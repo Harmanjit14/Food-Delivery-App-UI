@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/data/data.dart';
 import 'package:food_app_ui/models/restaurant.dart';
+import 'package:food_app_ui/screen2/singleRest.dart';
 
 Widget rating(BuildContext context, int rat) {
   List<Widget> stars = [];
@@ -44,7 +45,8 @@ Widget nearbyRes(BuildContext context) {
                 children: [
                   Text(
                     restaurant.name,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
